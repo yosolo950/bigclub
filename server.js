@@ -13,6 +13,8 @@ const PASSWORD = process.env.PASSWORD; // Aura password
 
 let driver;
 
+app.use(express.static(__dirname))
+
 // Connect to Neo4j
 (async () => {
   try {
