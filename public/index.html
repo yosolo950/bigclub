@@ -68,7 +68,7 @@
       document.getElementById("result").innerHTML = "Loading...";
 
       try {
-        const res = await fetch(`http://bigclub.onrender.com:3000/relationship?person1=${encodeURIComponent(p1)}&person2=${encodeURIComponent(p2)}`);
+        const res = await fetch(`https://bigclub.onrender.com:3000/relationship?person1=${encodeURIComponent(p1)}&person2=${encodeURIComponent(p2)}`);
         const data = await res.json();
 
         if (!data.relationships || data.relationships.length === 0) {
@@ -93,7 +93,7 @@
     });
     document.getElementById("download-btn").addEventListener("click", async () => {
       try {
-        const res = await fetch("http://https://bigclub.onrender.com:3000/download-data");
+        const res = await fetch("https://https://bigclub.onrender.com:3000/download-data");
         const data = await res.json();
 
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
