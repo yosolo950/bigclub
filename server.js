@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const neo4j = require("neo4j-driver");
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -13,7 +14,11 @@ const PASSWORD = process.env.PASSWORD; // Aura password
 
 let driver;
 
-app.use(express.static(__dirname))
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Connect to Neo4j
 (async () => {
