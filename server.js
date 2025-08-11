@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 // --- Neo4j Aura credentials ---
-const URI = ""; // Aura URI
-const USER = "";                           // Aura username
-const PASSWORD = "";                       // Aura password
+const URI = process.env.URI; // Aura URI
+const USER = process.env.USER; // Aura username
+const PASSWORD = process.env.PASSWORD; // Aura password
 
 let driver;
 
